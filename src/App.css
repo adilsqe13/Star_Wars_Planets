@@ -1,38 +1,159 @@
-.App {
-  text-align: center;
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+.kdam-thmor {
+    font-family: "Kdam Thmor Pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    background: url('https://bynder.southbankcentre.co.uk/m/42c83a47075c8b2f/original/RGL-The-Planets-150741-Sat-20-Jan-2024.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+
+.planet-card {
+    margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.bold {
+    font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dfjcac {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dfjsac {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.dfjeac {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.spinner-container {
+    height: 500px;
+}
+
+.card-shadow {
+    box-shadow: 3px 3px 15px rgb(18, 18, 18);
+}
+
+.card:hover {
+    box-shadow: none;
+    border: 1px solid rgb(18, 18, 18);
+}
+
+.blurry-transparent {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+.view-details {
+    color: rgb(220, 217, 217);
+    border: 1px solid white;
+}
+
+.view-details:hover {
+    color: white;
+    /* border: 1px solid white; */
+}
+
+.text-offwhite {
+    color: rgb(190, 187, 187);
+}
+
+.font-size-small {
+    font-size: 15px;
+}
+
+.text-green {
+    color: rgb(32, 248, 42);
+}
+
+.text-yellow {
+    color: rgb(253, 242, 24);
+}
+
+.text-red {
+    color: red;
+}
+
+@media only screen and (max-width:558px) {
+    .dnass {
+        margin: auto;
+        margin-top: 10px;
+    }
+}
+
+
+
+/* Loading Spinner */
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes lds-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    4.9% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    5% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
 }
