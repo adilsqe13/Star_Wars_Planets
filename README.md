@@ -1,8 +1,8 @@
-## Star Wars Planets Directory
+# Star Wars Planets Directory
 
 This project is a Star Wars planets directory built using React.js. It fetches data from the SWAPI (Star Wars API) to display information about various planets in the Star Wars universe. The directory includes the following features:
 
-1. Planets Directory:
+1. ## Planets Directory:
 Fetches and displays information about planets from the SWAPI API endpoint: https://swapi.dev/api/planets/?format=json.
 Each planet's data is presented in a distinct card, showcasing details such as the planet's name, climate, population, and terrain.
 2. Residents Display:
