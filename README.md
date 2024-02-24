@@ -10,14 +10,14 @@ This project is a Star Wars planets directory built using React.js. It fetches d
 
 <h2>Installation</h2>
 <ul>
- <li>Clone the repository to your local machine</li>
- <li>Navigate to the project directory</li>
- <li>Install node_modules</li>
- <li>Run Application using npm start</li>
+ <li>Clone the repository to your local machine.</li>
+ <li>Navigate to the project directory.</li>
+ <li>Install node_modules.</li>
+ <li>Run Application using npm start.</li>
 </ul>
 
 <h1>Fetching Planets</h1>
-<p>Fetches and displays information about planets from the SWAPI API endpoint: https://swapi.dev/api/planets/?format=json.
+<p>Fetches and displays information about planets from the SWAPI API endpoint.
 Each planet's data is presented in a distinct card, showcasing details such as the planet's name, climate, population, and terrain.</p>
 
 <h1>Residents Display</h1>
