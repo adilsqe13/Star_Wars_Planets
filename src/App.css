@@ -11,6 +11,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background: url('https://bynder.southbankcentre.co.uk/m/42c83a47075c8b2f/original/RGL-The-Planets-150741-Sat-20-Jan-2024.jpg');
     background-repeat: no-repeat;
@@ -94,6 +98,7 @@ body {
 .text-red {
     color: red;
 }
+
 
 @media only screen and (max-width:558px) {
     .dnass {

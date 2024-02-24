@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-          <Navbar />
+        <Navbar />
         <Routes>
           <Route exact path='/' element={<PlanetsCard />} />
           <Route exact path='/residents-card' element={<ResidentsCard />} />

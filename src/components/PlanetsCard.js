@@ -10,7 +10,7 @@ export default function PlanetsCard() {
     const [planets, setPlanets] = useState(null);
     const [nextUrl, setNextUrl] = useState('');
     const [preUrl, setPreUrl] = useState(null);
-    const [pageNo, setPageNo] = useState(1);
+    const [pageNo, setPageNo] = useState(Number(localStorage.getItem('pageNo')) || 1);
 
     const handlePlanets = async (fetchUrl) => {
         try {
@@ -36,23 +36,28 @@ export default function PlanetsCard() {
         setPlanets(null);
         handlePlanets(nextUrl);
         setPageNo(pageNo + 1);
+        localStorage.setItem('current-page', `page=${pageNo + 1}&`);
+        localStorage.setItem('pageNo', pageNo + 1);
     }
     const handlePre = async () => {
         setPlanets(null);
         handlePlanets(preUrl);
         setPageNo(pageNo - 1);
+        localStorage.setItem('current-page', `page=${pageNo - 1}&`);
+        localStorage.setItem('pageNo', pageNo - 1);
     }
 
 
     useEffect(() => {
-        handlePlanets('https://swapi.dev/api/planets/?format=json');
+        const page = localStorage.getItem('current-page') || '';
+        handlePlanets(`https://swapi.dev/api/planets/?${page}format=json`);
     }, []);
 
     return (
         <>
             <div className="container planets-card-container mt-2">
                 <div className="row">
-                    <small className='text-secondary kdam-thmor'>Page - {pageNo} &nbsp; Results - {planets === null ? 0 : planets.length}</small>
+                    <small className='text-offwhite kdam-thmor'>Page - {pageNo} &nbsp; Results - {planets === null ? 0 : planets.length}</small>
                     {planets === null ? <div className='container spinner-container dfjcac'><div class="lds-ripple"><div></div><div></div></div></div> : planets.map((planet, index) => {
                         return (
                             <div className="col mt-4">
@@ -119,7 +124,7 @@ export default function PlanetsCard() {
                 </div>
                 <div className="row py-4">
                     <div className="col-6 dfjsac"><button disabled={preUrl === null} onClick={handlePre} className='btn btn-md btn-light bold'><FontAwesomeIcon icon={faArrowLeft} /> Previous</button></div>
-                    <div className="col-6 dfjeac"><button onClick={handleNext} className='btn btn-light bold'>Next <FontAwesomeIcon icon={faArrowRight} /></button></div>
+                    <div className="col-6 dfjeac"><button disabled={nextUrl === null} onClick={handleNext} className='btn btn-light bold'>Next <FontAwesomeIcon icon={faArrowRight} /></button></div>
                 </div>
             </div>
         </>

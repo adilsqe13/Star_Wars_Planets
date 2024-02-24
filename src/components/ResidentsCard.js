@@ -1,7 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import residentsContext from '../CONTEXT/context/residentsContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 export default function ResidentsCard() {
+    const navigate = useNavigate();
     const [residentsData, setResidentsData] = useState(JSON.parse(localStorage.getItem('planet-residents')));
     const { residents } = useContext(residentsContext);
 
@@ -16,6 +20,10 @@ export default function ResidentsCard() {
         }
     }
 
+    const handleBack = async () => {
+        navigate('/');
+    }
+
     useEffect(() => {
         handleResidents();
     }, []);
@@ -23,7 +31,7 @@ export default function ResidentsCard() {
         <>
             <div className="container planets-card-container mt-2">
                 <div className="row">
-               <p><span className='h3 text-light kdam-thmor'>{localStorage.getItem('planet-name')} planet</span> &nbsp; <small className='text-secondary kdam-thmor'>Results - {residentsData === null ? 0 : residentsData.length}</small></p> 
+                    <p><button onClick={handleBack} className='text-light bg-transparent border-0'><FontAwesomeIcon width={30} icon={faArrowLeft} /></button><span className='h3 text-green kdam-thmor'>{localStorage.getItem('planet-name')} planet</span> &nbsp; <small className='text-offwhite kdam-thmor'>Results - {residentsData === null ? 0 : residentsData.length}</small></p>
                     {residentsData === null ? <div className='container spinner-container dfjcac'><div class="lds-ripple"><div></div><div></div></div></div>
                         : residentsData.length === 0 ? <div className='container spinner-container dfjcac'><span className='text-danger bold fs-3 border p-4 bg-light'>No Data Available</span></div>
                             : residentsData.map((item, index) => {
@@ -82,7 +90,7 @@ export default function ResidentsCard() {
                                                         <span><strong className='text-offwhite font-size-small'>MASS:</strong></span>
                                                     </div>
                                                     <div className="col-6">
-                                                        <span className='text-info '>{item.mass}</span>
+                                                        <span className='text-red bold '>{item.mass}</span>
                                                     </div>
                                                 </div>
                                             </div>
